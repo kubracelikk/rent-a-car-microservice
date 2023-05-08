@@ -17,12 +17,10 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CreateCarRequest {
     @NotNull
-    @NotBlank
     private UUID modelId;
     @Min(value = 2000)
     //TODO
     private int modelYear;
-    @NotNull
     @NotBlank
     //Regex
     private String plate;
