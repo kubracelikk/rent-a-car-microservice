@@ -16,7 +16,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CreateModelRequest {
     @NotNull
-    @NotBlank //boşluk kontrolü
     private UUID brandId;
 
     @NotBlank
