@@ -20,7 +20,7 @@ public class FiltersController {
 
    /* @PostConstruct //metota öncelik verir
     public void createDb() {
-        service.add(new Filter()); tabloyu oluşturmak için bir defalığına çalışır
+        service.add(new Filter()); // tabloyu oluşturmak için bir defalığına çalışır
     }*/
 
     @GetMapping
