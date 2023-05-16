@@ -16,7 +16,11 @@ public interface FilterService {
 
     void delete(UUID id);
 
+    void deleteByCarId(UUID carId);
+
     void deleteAllByBrandId(UUID brandId); //bulk delete
 
     void deleteAllByModelId(UUID modelId);
+
+
 }
