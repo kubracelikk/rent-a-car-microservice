@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @AllArgsConstructor
@@ -29,7 +28,7 @@ public class FiltersController {
     }
 
     @GetMapping("/{id}")
-    public GetFilterResponse getById(@PathVariable UUID id) {
+    public GetFilterResponse getById(@PathVariable String id) {
         return service.getById(id);
     }
 
