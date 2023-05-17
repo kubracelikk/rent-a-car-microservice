@@ -22,5 +22,7 @@ public interface FilterService {
 
     void deleteAllByModelId(UUID modelId);
 
+    Filter getByCarId(UUID carId);
+
 
 }
