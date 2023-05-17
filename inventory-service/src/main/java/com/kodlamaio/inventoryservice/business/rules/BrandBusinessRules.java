@@ -1,5 +1,6 @@
 package com.kodlamaio.inventoryservice.business.rules;
 
+import com.kodlamaio.commonpackage.utils.exceptions.BusinessException;
 import com.kodlamaio.inventoryservice.repository.BrandRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ public class BrandBusinessRules {
 
     public void checkIfBrandExists(UUID id) {
         if (!repository.existsById(id)) {
-            throw new RuntimeException("BRAND_NOT_EXISTS");
+            throw new BusinessException("BRAND_NOT_EXISTS");
         }
     }
 }
