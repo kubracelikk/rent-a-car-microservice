@@ -22,7 +22,7 @@ public class CarBusinessRules {
 
     public void checkCarAvailability(UUID id) {
         var car = repository.findById(id).orElseThrow();
-        if (car.getState().equals(State.Available)) {
+        if (!car.getState().equals(State.Available)) {
             System.err.println(("availability metodu çalıştı"));
             throw new BusinessException("CAR_NOT_AVAİLABLE");
         }
