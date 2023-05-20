@@ -57,7 +57,7 @@ public class CarManager implements CarService {
         car.setState(State.Available);
         var createdCar = repository.save(car);
         sendKafkaCarCreatedEvent(createdCar);
-        var response = mapper.forResponse().map(car, CreateCarResponse.class);
+        var response = mapper.forResponse().map(createdCar, CreateCarResponse.class);
 
         return response;
 
