@@ -1,5 +1,6 @@
 package com.kodlamaio.paymentservice.business.dto.requests;
 
+import com.kodlamaio.commonpackage.utils.dto.PaymentRequest;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
