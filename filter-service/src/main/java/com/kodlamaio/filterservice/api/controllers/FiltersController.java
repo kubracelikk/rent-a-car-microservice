@@ -17,7 +17,7 @@ import java.util.List;
 public class FiltersController {
     private final FilterService service;
 
-   /* @PostConstruct //metota öncelik verir
+  /*  @PostConstruct //metota öncelik verir
     public void createDb() {
         service.add(new Filter()); // tabloyu oluşturmak için bir defalığına çalışır
     }*/
