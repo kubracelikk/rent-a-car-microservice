@@ -32,6 +32,7 @@ public class RentalsController {
     }
 
     @PostMapping
+    //@PreAuthorize(Roles.AdminAndUser)
     @ResponseStatus(HttpStatus.CREATED)
     public CreateRentalResponse add(@Valid @RequestBody CreateRentalRequest request) {
         return service.add(request);
