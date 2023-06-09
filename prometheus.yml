@@ -1,0 +1,39 @@
+global:
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds.
+
+rule_files:
+#  - "alert.rules.yml"
+#  - "rules.yml"
+
+scrape_configs:
+  - job_name: 'FILTER-SERVICE'
+    scrape_interval: 2s
+    metrics_path: '/FILTER-SERVICE/actuator/prometheus'
+    static_configs:
+      - targets: [ 'host.docker.internal:9010' ]
+  - job_name: 'INVENTORY-SERVICE'
+    scrape_interval: 2s
+    metrics_path: '/INVENTORY-SERVICE/actuator/prometheus'
+    static_configs:
+      - targets: [ 'host.docker.internal:9010' ]
+  - job_name: 'MAINTENANCE-SERVICE'
+    scrape_interval: 2s
+    metrics_path: '/MAINTENANCE-SERVICE/actuator/prometheus'
+    static_configs:
+      - targets: [ 'host.docker.internal:9010' ]
+  - job_name: 'PAYMENT-SERVICE'
+    scrape_interval: 2s
+    metrics_path: '/PAYMENT-SERVICE/actuator/prometheus'
+    static_configs:
+      - targets: [ 'host.docker.internal:9010' ]
+  - job_name: 'RENTAL-SERVICE'
+    scrape_interval: 2s
+    metrics_path: '/RENTAL-SERVICE/actuator/prometheus'
+    static_configs:
+      - targets: [ 'host.docker.internal:9010' ]
+  - job_name: 'INVOICE-SERVICE'
+    scrape_interval: 2s
+    metrics_path: '/INVOICE-SERVICE/actuator/prometheus'
+    static_configs:
+      - targets: [ 'host.docker.internal:9010' ]
