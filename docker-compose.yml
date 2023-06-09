@@ -20,7 +20,12 @@ services:
     command: start-dev
     volumes:
       - .:/opt/jboss/keycloak/imports
-  
+
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - "9411:9411"
   
   filterdb:
     container_name: filterdb
