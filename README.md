@@ -8,7 +8,8 @@
 ![Microservice](https://github.com/kubracelikk/rent-a-car-microservice/assets/100384748/2f21eaf6-571b-408e-96b2-105555448681)
 
 
-##Used Technologies
+## Used Technologies
+
 Zipkin,Sleuth,Maven,Lombok,Grafana,Postman,Validation,MongoDB,Spring Boot,Spring Web,PostgreSQL,Prometheus,Spring Cloud,API Gateway,Apache Kafka,Spring Data JPA,Docker Compose,Spring Cloud Config,Spring Boot Actuator,Spring Boot Dev Tools,OpenFeign,Eureka Discovery Server/Client
 
 
