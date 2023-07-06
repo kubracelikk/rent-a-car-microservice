@@ -57,7 +57,7 @@ public class MaintenanceManager implements MaintenanceService {
         Maintenance maintenance = repository.findByCarIdAndIsCompletedIsFalse(carId);
         maintenance.setCompleted(true);
         maintenance.setEndDate(LocalDateTime.now());
-        //carService.changeState(carId, State.AVAILABLE);
+        
         sendKafkaMaintenanceCompletedEvent(carId);
         repository.save(maintenance);
         var response = mapper.forResponse().map(maintenance, GetMaintenanceResponse.class);
@@ -76,7 +76,6 @@ public class MaintenanceManager implements MaintenanceService {
         maintenance.setStartDate(LocalDateTime.now());
         maintenance.setEndDate(null);
         repository.save(maintenance);
-        //carService.changeState(request.getCarId(), State.MAINTENANCE);
         sendKafkaMaintenanceCreatedEvent(request.getCarId());
         var response = mapper.forResponse().map(maintenance, CreateMaintenanceResponse.class);
 
