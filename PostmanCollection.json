@@ -1,0 +1,1422 @@
+{
+  "info": {
+    "_postman_id": "1208e6ff-9f8c-4aab-ab77-8afeb4ecbde0",
+    "name": "Turkcell-RentACar",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23943998"
+  },
+  "item": [
+    {
+      "name": "IdentityServer",
+      "item": [
+        {
+          "name": "getAccessToken",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "password"
+                },
+                {
+                  "key": "client_id",
+                  "value": "rent-a-car-microservice"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "xVgdF6MwmW0xd5a5t4zGeOzmw5Ypzpnk"
+                },
+                {
+                  "key": "scope",
+                  "value": "email"
+                },
+                {
+                  "key": "username",
+                  "value": "kübrasu"
+                },
+                {
+                  "key": "password",
+                  "value": "12345"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/realms/RentACarMicroservice/protocol/openid-connect/token",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "realms",
+                "RentACarMicroservice",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refreshAccessToken",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "refresh_token"
+                },
+                {
+                  "key": "client_id",
+                  "value": "rent-a-car-microservice"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "QeqG7I5gnFGVTZR9b7q1c10MjUvoVG2A"
+                },
+                {
+                  "key": "refresh_token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5Yjg0OTYzNC1jNzg2LTRhZTMtYjM5Yi0xZmM5NTU1MTk2M2UifQ.eyJleHAiOjE2ODUzODU2MDYsImlhdCI6MTY4NTM4MzgwNiwianRpIjoiZTI0YmZmYTItOTQ0NC00MzMyLTkzODItMmI1NWY1YzMwNDExIiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMS4xMDI6ODA4MC9yZWFsbXMvUmVudEFDYXJNaWNyb3NlcnZpY2UiLCJhdWQiOiJodHRwOi8vMTkyLjE2OC4xLjEwMjo4MDgwL3JlYWxtcy9SZW50QUNhck1pY3Jvc2VydmljZSIsInN1YiI6ImM0NjVkN2YyLWNjYTItNDBkZi04MzRkLWQ1ODI0YTY2NWY4YiIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJyZW50LWEtY2FyLW1pY3Jvc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiIyZTA2MjhiNS0wY2I1LTRiNzUtYjRlZi03Njc1NmUzNWVkZjMiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiIyZTA2MjhiNS0wY2I1LTRiNzUtYjRlZi03Njc1NmUzNWVkZjMifQ.uHthmYkPAsX9RFyAu7O7ePgQACtF2uDvOutNF5cLjcg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://{{url}}:8080/realms/RentACarMicroservice/protocol/openid-connect/token",
+              "protocol": "http",
+              "host": [
+                "{{url}}"
+              ],
+              "port": "8080",
+              "path": [
+                "realms",
+                "RentACarMicroservice",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "destroySession",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "rent-a-car-microservice",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "QeqG7I5gnFGVTZR9b7q1c10MjUvoVG2A",
+                  "type": "text"
+                },
+                {
+                  "key": "refresh_token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3MWQ4NWZhNC00YjBiLTQ1MTctYmVhMS1lNmMwMGViNjE2MWEifQ.eyJpYXQiOjE2ODM4MzgwNzYsImp0aSI6ImQ4ODYzMjAyLTVhZGEtNDdhYi04NzBiLTc4NDAxZWQyNmQ1MyIsImlzcyI6Imh0dHA6Ly8xOTIuMTY4LjEuMTAyOjgwODAvYXV0aC9yZWFsbXMvUmVudEFDYXJNaWNyb3NlcnZpY2UiLCJhdWQiOiJodHRwOi8vMTkyLjE2OC4xLjEwMjo4MDgwL2F1dGgvcmVhbG1zL1JlbnRBQ2FyTWljcm9zZXJ2aWNlIiwic3ViIjoiZDU0YTY4MjYtMzIxZC00OWNmLTk1ODctZWE4MDg4MmFkNmYwIiwidHlwIjoiT2ZmbGluZSIsImF6cCI6InJlbnQtYS1jYXItbWljcm9zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6IjUyM2UzNzliLTE0M2MtNGIyYS1iZGIzLTE1N2M5MjIzMjNiZCIsInNjb3BlIjoib3BlbmlkIG9mZmxpbmVfYWNjZXNzIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiI1MjNlMzc5Yi0xNDNjLTRiMmEtYmRiMy0xNTdjOTIyMzIzYmQifQ.9lVvY0cAVGZZMc2LgxvmoTzdpa5hOfTWr4erEKtV_vo",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://{{url}}:8080/realms/RentACarMicroservice/protocol/openid-connect/logout",
+              "protocol": "http",
+              "host": [
+                "{{url}}"
+              ],
+              "port": "8080",
+              "path": [
+                "realms",
+                "RentACarMicroservice",
+                "protocol",
+                "openid-connect",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "inventory-service",
+      "item": [
+        {
+          "name": "Car",
+          "item": [
+            {
+              "name": "getAll",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5N25Fc01acEhoSGh2UFJKamUwVUhzQWhCQWJyZjEyTUtrVXc1Y2ZER3VJIn0.eyJleHAiOjE2ODY4NjExNDcsImlhdCI6MTY4Njg1OTM0NywianRpIjoiMmJjM2UzZDgtNzFhYy00NzgxLWI1NGYtOWE3YmNjYTI0MTBkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9SZW50QUNhck1pY3Jvc2VydmljZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI3ZDhmNjRiMi00MzFlLTQ1OTctOWNmZC0yZDVkY2Y2ODEwMmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZW50LWEtY2FyLW1pY3Jvc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI5ZDY3OGFlZi0yMzhjLTQ2MjEtOTVhYi04ZTU2NDU4YzkzNjYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXJlbnRhY2FybWljcm9zZXJ2aWNlIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjlkNjc4YWVmLTIzOGMtNDYyMS05NWFiLThlNTY0NThjOTM2NiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiS8O8YnJhIMOHZWxpayIsInByZWZlcnJlZF91c2VybmFtZSI6ImvDvGJyYXN1IiwiZ2l2ZW5fbmFtZSI6IkvDvGJyYSIsImZhbWlseV9uYW1lIjoiw4dlbGlrIiwiZW1haWwiOiJrdWJyYUBnbWFpbC5jb20ifQ.Ss5SMf6Zbok8mKk4s989RchygIczCtIYgyb6tMpuD-xpszluacrk0UYEPRFauWrgGaay69ZblunSuQnR2u0oWjAnbhmcno4VZ88wMJGUiyVG9jQyEBKW5XmqPIT4kZyifPMGhvdpTUcxCo6_oW4WVrEIVGz7BidkcfgWNd3wZquwCX6u1H5BhfOh1km1zCKrOsYdYYaAPIjSvj91M2t03so5sqzWe5-4mrEpog-wDMGsY5zNzMnKECRNroYl3DCof1KbnxNcDxwLNNowWRsWUk0CsvdDpDeKuwO8VFNImDTa2eJhDSL5apBptSNkprEct5KEDybrci7TSutuA416pw",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:9010/INVENTORY-SERVICE/api/cars",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "INVENTORY-SERVICE",
+                    "api",
+                    "cars"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getById",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5UnJ2SXY3ckg4T0E2NGRHblJvX1Yybjl2aU90WDAxZ3puWXdjc0doVjBvIn0.eyJleHAiOjE2ODU3ODIxMTAsImlhdCI6MTY4NTc4MDMxMCwianRpIjoiZGZiMDk2N2QtNDFkMy00NzRiLWJjYWItMDJmZWI1NDc4ZDQyIiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMS4xMDE6ODA4MC9yZWFsbXMvUmVudEFDYXJNaWNyb3NlcnZpY2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZmUwOGFkNDMtN2JjMi00ODc1LWJjNTgtNTAyZjYxYWM3YTNlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoicmVudC1hLWNhci1taWNyb3NlcnZpY2UiLCJzZXNzaW9uX3N0YXRlIjoiYmJiZWEyMDktMGYxOS00ODcyLTg0ZTQtNzNlNzFlYTNjZTkyIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1yZW50YWNhcm1pY3Jvc2VydmljZSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiYmJiZWEyMDktMGYxOS00ODcyLTg0ZTQtNzNlNzFlYTNjZTkyIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJ0ZXN0IHRlc3QiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0IiwiZ2l2ZW5fbmFtZSI6InRlc3QiLCJmYW1pbHlfbmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.fqKpr1H51WtIM_deGFwOllT64x2oYhjKIsk2Ho_BaDlYWurMH6CD8R0wEEMfje3EktxfxZr12ywjZo-UzmXvdpDEKox10TVLc4vc_TocB97Stcy4fNyZIXHv-vE0RsWQaZXmcWRPEEhGzea9Sxfxz3iiX1SzMgC_B_vmjUKi_tkhTg5w8WaPFgLDGZZ89emtMaJ_2xt1oQKh1S8qyYCTvtg0jC3RQNH-LVXPG3MvNvWKGXR-kNVKS0ZT4uce4pl2qvDzfS6F8zxoTQkG6g13YTMG4FFOlfpXp6AWtT-RaV9w1HBpOP3DJPtgwp300LQ_9au0qLzbEKfysYRnxeXPZg",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/cars/aa00c680-3acb-4ac6-9c70-8902f2d6754a",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "cars",
+                    "aa00c680-3acb-4ac6-9c70-8902f2d6754a"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "add",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkaDRvSmpoREpHdVlNZks3UHdMX2NaeWF3V2hGa0Q5bWJjUVNhRlNvUTh3In0.eyJleHAiOjE2ODM4OTQ3OTEsImlhdCI6MTY4Mzg5NDQ5MSwianRpIjoiYjM2NzNkMDctNmMwOC00ZDA4LTkzZjgtZDNhNWMzNGE0NjJjIiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguNC4yNDo4MDgwL2F1dGgvcmVhbG1zL1JlbnRBQ2FyTWljcm9zZXJ2aWNlIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjBiMDBlM2YzLTJjMGMtNDQ2Ni1hMTU4LTJlMDc0MTAyYjVhNyIsInR5cCI6IkJlYXJlciIsImF6cCI6InJlbnQtYS1jYXItbWljcm9zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6ImI3NDVkNGZjLTgyMjQtNDE4Yy04Y2Y2LTk5Mjg1ZGJlOTgxOSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1yZW50YWNhcm1pY3Jvc2VydmljZSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBicmFuY2ggcHJvZmlsZSIsInNpZCI6ImI3NDVkNGZjLTgyMjQtNDE4Yy04Y2Y2LTk5Mjg1ZGJlOTgxOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkJ1cmFrIEtBTEFZQ0kiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJidXJhayIsImdpdmVuX25hbWUiOiJCdXJhayIsImZhbWlseV9uYW1lIjoiS0FMQVlDSSIsImJyYW5jaCI6IkFua2FyYSIsImVtYWlsIjoiYnVyYWtAZ21haWwuY29tIn0.pafeWEzGIBdywqz57JIYWxtHNYTcfCeAQnL65UjSDPzqConnB_ALBtXOa3q6tBSxXsRTDvFVeXt31_DrWYjExXJHtIpretdqghnQWvktwcC8-eBTAbAoFL9J8lmdxmCKR1s7vJyMlVc1d6YMXNisxyDkmcnlNphRiQdPRIC9uQB9XOB8kWFUyjlQ1VRMqwKoshYuIzJRLW2rSdOVc-AzXiixpvuIhzS8VCMKEX185gZZFF69HouQwHyRxb34qgtgG_TMbk4sTVNlDUU5KEU-haXAB9gsZCM-JKp1_BQeT_3BKpgaHE7KZWIptj7TUymZNck45-hzRAEiCjOC4gNssA",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"modelId\": \"5857874d-1910-4597-adc7-51a1b5b889d1\",\r\n  \"modelYear\": 2022,\r\n  \"plate\": \"13 GG 1414\",\r\n  \"dailyPrice\": 888\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/cars",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "cars"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"modelId\": \"uuid\",\r\n    \"modelYear\": 2000,\r\n    \"plate\": \"81 NLZ 1669\",\r\n    \"state\": \"Available\",\r\n    \"dailyPrice\": 1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/cars/1",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "cars",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/cars/1",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "cars",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Model",
+          "item": [
+            {
+              "name": "getAll",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/models",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "models"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getById",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/models/1",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "models",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "add",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"brandId\": \"205a8d1a-e46f-41bd-8ab1-437e549875d2\",\r\n  \"name\": \"c-1\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/models",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "models"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"brandId\": \"uuid\",\r\n    \"name\": \"string\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/models/1",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "models",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/models/1",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "models",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Brand",
+          "item": [
+            {
+              "name": "getAll",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/brands",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "brands"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getById",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/brands/1",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "brands",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "add",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"string\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/brands",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "brands"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"string\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/brands/1",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "brands",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://{{localhost}}:9010/inventory-service/api/brands/1",
+                  "protocol": "http",
+                  "host": [
+                    "{{localhost}}"
+                  ],
+                  "port": "9010",
+                  "path": [
+                    "inventory-service",
+                    "api",
+                    "brands",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "filter-service",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/filter-service/api/filters",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "filter-service",
+                "api",
+                "filters"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/filter-service/api/filters/1",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "filter-service",
+                "api",
+                "filters",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "rental-service",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5eXZ2Q1BvbzBFYlgyTjNHYzI5cEFNNWc3MUp1UTFFSmdPTjdOSFh0RDI0In0.eyJleHAiOjE2ODM5MDQ5NjcsImlhdCI6MTY4MzkwMzE2NywianRpIjoiNDZmNTAwOWUtOWZjOS00ZTI5LWI2NjQtMWU5MmM0OTRiNzhlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL1JlbnRBQ2FyTWljcm9zZXJ2aWNlIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6Ijg0ZWU0Mjg1LWM0MmEtNDNiNS05ZTkyLWQzNjUyNTVlMTAwMSIsInR5cCI6IkJlYXJlciIsImF6cCI6InJlbnQtYS1jYXItbWljcm9zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6ImFkZWVkMzdhLTQ2ZDMtNDYwOC05Y2NjLWI1YjNkNGEyNmY4NSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1yZW50YWNhcm1pY3Jvc2VydmljZSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiYWRlZWQzN2EtNDZkMy00NjA4LTljY2MtYjViM2Q0YTI2Zjg1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJCdXJhayBLQUxBWUNJIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYnVyYWsiLCJnaXZlbl9uYW1lIjoiQnVyYWsiLCJmYW1pbHlfbmFtZSI6IktBTEFZQ0kiLCJlbWFpbCI6ImJ1cmFrQGdtYWlsLmNvbSJ9.bbcwRCakrQWyVhspnbyvbCVPSJgwFGiab9rLkqZEuWC7YQq0e4ybhztSbzIN9rOaF18nwezvmFETN1qYuAoRJ1VzuWCTB2PUjlb0WCLl8xz0JStZS4nFA7Nz8cwXaWF0xGe6F3OkIXKgHqjCIHOUNJ1nnyt3Q3ZCj4vRxSh_1qYpVbpd4PhcoDDIkqkxa_Yu915g6qv-GddS12ZmBA1g-gLpY1B2vwidUNi2SE-czi7zn-_1x2osCf1ddLCdGKdZoUrXwUEDfztuWkECmCL_yXbzlAa2qiIfcOI5q6Dnbd4p-N-3lrCWZhXr3WWbDHK3vYy-SMQO9jEyJB13WvC6_g",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/rental-service/api/rentals",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "rental-service",
+                "api",
+                "rentals"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/rental-service/api/rentals/2",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "rental-service",
+                "api",
+                "rentals",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5eXZ2Q1BvbzBFYlgyTjNHYzI5cEFNNWc3MUp1UTFFSmdPTjdOSFh0RDI0In0.eyJleHAiOjE2ODM5MDQ5NjcsImlhdCI6MTY4MzkwMzE2NywianRpIjoiNDZmNTAwOWUtOWZjOS00ZTI5LWI2NjQtMWU5MmM0OTRiNzhlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL1JlbnRBQ2FyTWljcm9zZXJ2aWNlIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6Ijg0ZWU0Mjg1LWM0MmEtNDNiNS05ZTkyLWQzNjUyNTVlMTAwMSIsInR5cCI6IkJlYXJlciIsImF6cCI6InJlbnQtYS1jYXItbWljcm9zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6ImFkZWVkMzdhLTQ2ZDMtNDYwOC05Y2NjLWI1YjNkNGEyNmY4NSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1yZW50YWNhcm1pY3Jvc2VydmljZSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiYWRlZWQzN2EtNDZkMy00NjA4LTljY2MtYjViM2Q0YTI2Zjg1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJCdXJhayBLQUxBWUNJIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYnVyYWsiLCJnaXZlbl9uYW1lIjoiQnVyYWsiLCJmYW1pbHlfbmFtZSI6IktBTEFZQ0kiLCJlbWFpbCI6ImJ1cmFrQGdtYWlsLmNvbSJ9.bbcwRCakrQWyVhspnbyvbCVPSJgwFGiab9rLkqZEuWC7YQq0e4ybhztSbzIN9rOaF18nwezvmFETN1qYuAoRJ1VzuWCTB2PUjlb0WCLl8xz0JStZS4nFA7Nz8cwXaWF0xGe6F3OkIXKgHqjCIHOUNJ1nnyt3Q3ZCj4vRxSh_1qYpVbpd4PhcoDDIkqkxa_Yu915g6qv-GddS12ZmBA1g-gLpY1B2vwidUNi2SE-czi7zn-_1x2osCf1ddLCdGKdZoUrXwUEDfztuWkECmCL_yXbzlAa2qiIfcOI5q6Dnbd4p-N-3lrCWZhXr3WWbDHK3vYy-SMQO9jEyJB13WvC6_g",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"carId\": \"19977cf2-7893-4226-925a-53b138196905\",\r\n  \"dailyPrice\": 120,\r\n  \"rentedForDays\": 7\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/rental-service/api/rentals",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "rental-service",
+                "api",
+                "rentals"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"carId\": 0,\r\n  \"dailyPrice\": 0,\r\n  \"rentedForDays\": 0,\r\n  \"startDate\": \"2023-04-15T23:26:20.885Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/rental-service/api/rentals/1",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "rental-service",
+                "api",
+                "rentals",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/rental-service/api/rentals/f866a82d-5128-4394-869c-04f87199f699",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "rental-service",
+                "api",
+                "rentals",
+                "f866a82d-5128-4394-869c-04f87199f699"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "maintenance-service",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5N25Fc01acEhoSGh2UFJKamUwVUhzQWhCQWJyZjEyTUtrVXc1Y2ZER3VJIn0.eyJleHAiOjE2ODY4NjExNDcsImlhdCI6MTY4Njg1OTM0NywianRpIjoiMmJjM2UzZDgtNzFhYy00NzgxLWI1NGYtOWE3YmNjYTI0MTBkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9SZW50QUNhck1pY3Jvc2VydmljZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI3ZDhmNjRiMi00MzFlLTQ1OTctOWNmZC0yZDVkY2Y2ODEwMmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZW50LWEtY2FyLW1pY3Jvc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI5ZDY3OGFlZi0yMzhjLTQ2MjEtOTVhYi04ZTU2NDU4YzkzNjYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXJlbnRhY2FybWljcm9zZXJ2aWNlIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjlkNjc4YWVmLTIzOGMtNDYyMS05NWFiLThlNTY0NThjOTM2NiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiS8O8YnJhIMOHZWxpayIsInByZWZlcnJlZF91c2VybmFtZSI6ImvDvGJyYXN1IiwiZ2l2ZW5fbmFtZSI6IkvDvGJyYSIsImZhbWlseV9uYW1lIjoiw4dlbGlrIiwiZW1haWwiOiJrdWJyYUBnbWFpbC5jb20ifQ.Ss5SMf6Zbok8mKk4s989RchygIczCtIYgyb6tMpuD-xpszluacrk0UYEPRFauWrgGaay69ZblunSuQnR2u0oWjAnbhmcno4VZ88wMJGUiyVG9jQyEBKW5XmqPIT4kZyifPMGhvdpTUcxCo6_oW4WVrEIVGz7BidkcfgWNd3wZquwCX6u1H5BhfOh1km1zCKrOsYdYYaAPIjSvj91M2t03so5sqzWe5-4mrEpog-wDMGsY5zNzMnKECRNroYl3DCof1KbnxNcDxwLNNowWRsWUk0CsvdDpDeKuwO8VFNImDTa2eJhDSL5apBptSNkprEct5KEDybrci7TSutuA416pw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9010/MAINTENANCE-SERVICE/api/maintenances",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9010",
+              "path": [
+                "MAINTENANCE-SERVICE",
+                "api",
+                "maintenances"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/maintenance-service/api/maintenances/1",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "maintenance-service",
+                "api",
+                "maintenances",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5N25Fc01acEhoSGh2UFJKamUwVUhzQWhCQWJyZjEyTUtrVXc1Y2ZER3VJIn0.eyJleHAiOjE2ODYzNDczNTgsImlhdCI6MTY4NjM0NTU1OCwianRpIjoiYTYyYWJkY2MtYmMxOC00NzdhLThhMWMtYzhhZWQ1N2YzZTE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9SZW50QUNhck1pY3Jvc2VydmljZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI3ZDhmNjRiMi00MzFlLTQ1OTctOWNmZC0yZDVkY2Y2ODEwMmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZW50LWEtY2FyLW1pY3Jvc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiIxZDI0YWVjZS03NWFlLTQxNDctODdjNi0yN2YwZjk3ZDk3YTkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXJlbnRhY2FybWljcm9zZXJ2aWNlIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjFkMjRhZWNlLTc1YWUtNDE0Ny04N2M2LTI3ZjBmOTdkOTdhOSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiS8O8YnJhIMOHZWxpayIsInByZWZlcnJlZF91c2VybmFtZSI6ImvDvGJyYXN1IiwiZ2l2ZW5fbmFtZSI6IkvDvGJyYSIsImZhbWlseV9uYW1lIjoiw4dlbGlrIiwiZW1haWwiOiJrdWJyYUBnbWFpbC5jb20ifQ.gXn7AVlicY8XlxI63TT4c-AqnpIABRLlVJ_OrZqkP16uTgqLhhLJiVkEtPKKNJ3nxK3SDGliTWISxkFR7eoHru3PSgYOFNF-8rKfag3iuM2xKG4KL1qynDJU6aHTRi6x6ATGpG1yMzGy7iF3Lba0tygkucUiuUOCsfkBMX1Qt3xipcWSprP1cHMEoypwlXKEqGdAxFdnZysAcpQpN0hsyow3TbBdOIjbEMQV3DbZqT40DhFRtLCKdgPzCaQ0dowD3jzomgstgJB8-qS6UpeiIaFxcqdOvvXyIX-g4lbrHB9jFbkwO0q83sn2Nr8o7qcrvPYyrteivdmeZ3haAgQfgQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"information\": \"TEST\",\r\n  \"carId\": \"c0f46ac2-4122-4ba0-9082-1808517726d4\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9010/MAINTENANCE-SERVICE/api/maintenances",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9010",
+              "path": [
+                "MAINTENANCE-SERVICE",
+                "api",
+                "maintenances"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"information\": \"string\",\r\n  \"carId\": 0,\r\n  \"startDate\": \"2023-04-15T23:13:30.673Z\",\r\n  \"endDate\": \"2023-04-15T23:13:30.673Z\",\r\n  \"completed\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/maintenance-service/api/maintenances/1",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "maintenance-service",
+                "api",
+                "maintenances",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/maintenance-service/api/maintenances/7",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "maintenance-service",
+                "api",
+                "maintenances",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "returnCarFromMaintenance",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5N25Fc01acEhoSGh2UFJKamUwVUhzQWhCQWJyZjEyTUtrVXc1Y2ZER3VJIn0.eyJleHAiOjE2ODYzNDczNTgsImlhdCI6MTY4NjM0NTU1OCwianRpIjoiYTYyYWJkY2MtYmMxOC00NzdhLThhMWMtYzhhZWQ1N2YzZTE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9SZW50QUNhck1pY3Jvc2VydmljZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI3ZDhmNjRiMi00MzFlLTQ1OTctOWNmZC0yZDVkY2Y2ODEwMmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZW50LWEtY2FyLW1pY3Jvc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiIxZDI0YWVjZS03NWFlLTQxNDctODdjNi0yN2YwZjk3ZDk3YTkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLXJlbnRhY2FybWljcm9zZXJ2aWNlIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjFkMjRhZWNlLTc1YWUtNDE0Ny04N2M2LTI3ZjBmOTdkOTdhOSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiS8O8YnJhIMOHZWxpayIsInByZWZlcnJlZF91c2VybmFtZSI6ImvDvGJyYXN1IiwiZ2l2ZW5fbmFtZSI6IkvDvGJyYSIsImZhbWlseV9uYW1lIjoiw4dlbGlrIiwiZW1haWwiOiJrdWJyYUBnbWFpbC5jb20ifQ.gXn7AVlicY8XlxI63TT4c-AqnpIABRLlVJ_OrZqkP16uTgqLhhLJiVkEtPKKNJ3nxK3SDGliTWISxkFR7eoHru3PSgYOFNF-8rKfag3iuM2xKG4KL1qynDJU6aHTRi6x6ATGpG1yMzGy7iF3Lba0tygkucUiuUOCsfkBMX1Qt3xipcWSprP1cHMEoypwlXKEqGdAxFdnZysAcpQpN0hsyow3TbBdOIjbEMQV3DbZqT40DhFRtLCKdgPzCaQ0dowD3jzomgstgJB8-qS6UpeiIaFxcqdOvvXyIX-g4lbrHB9jFbkwO0q83sn2Nr8o7qcrvPYyrteivdmeZ3haAgQfgQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9010/MAINTENANCE-SERVICE/api/maintenances/return?carId=c0f46ac2-4122-4ba0-9082-1808517726d4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9010",
+              "path": [
+                "MAINTENANCE-SERVICE",
+                "api",
+                "maintenances",
+                "return"
+              ],
+              "query": [
+                {
+                  "key": "carId",
+                  "value": "c0f46ac2-4122-4ba0-9082-1808517726d4"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "payment-service",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkaDRvSmpoREpHdVlNZks3UHdMX2NaeWF3V2hGa0Q5bWJjUVNhRlNvUTh3In0.eyJleHAiOjE2ODM4OTQ3OTEsImlhdCI6MTY4Mzg5NDQ5MSwianRpIjoiYjM2NzNkMDctNmMwOC00ZDA4LTkzZjgtZDNhNWMzNGE0NjJjIiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguNC4yNDo4MDgwL2F1dGgvcmVhbG1zL1JlbnRBQ2FyTWljcm9zZXJ2aWNlIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjBiMDBlM2YzLTJjMGMtNDQ2Ni1hMTU4LTJlMDc0MTAyYjVhNyIsInR5cCI6IkJlYXJlciIsImF6cCI6InJlbnQtYS1jYXItbWljcm9zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6ImI3NDVkNGZjLTgyMjQtNDE4Yy04Y2Y2LTk5Mjg1ZGJlOTgxOSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1yZW50YWNhcm1pY3Jvc2VydmljZSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBicmFuY2ggcHJvZmlsZSIsInNpZCI6ImI3NDVkNGZjLTgyMjQtNDE4Yy04Y2Y2LTk5Mjg1ZGJlOTgxOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkJ1cmFrIEtBTEFZQ0kiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJidXJhayIsImdpdmVuX25hbWUiOiJCdXJhayIsImZhbWlseV9uYW1lIjoiS0FMQVlDSSIsImJyYW5jaCI6IkFua2FyYSIsImVtYWlsIjoiYnVyYWtAZ21haWwuY29tIn0.pafeWEzGIBdywqz57JIYWxtHNYTcfCeAQnL65UjSDPzqConnB_ALBtXOa3q6tBSxXsRTDvFVeXt31_DrWYjExXJHtIpretdqghnQWvktwcC8-eBTAbAoFL9J8lmdxmCKR1s7vJyMlVc1d6YMXNisxyDkmcnlNphRiQdPRIC9uQB9XOB8kWFUyjlQ1VRMqwKoshYuIzJRLW2rSdOVc-AzXiixpvuIhzS8VCMKEX185gZZFF69HouQwHyRxb34qgtgG_TMbk4sTVNlDUU5KEU-haXAB9gsZCM-JKp1_BQeT_3BKpgaHE7KZWIptj7TUymZNck45-hzRAEiCjOC4gNssA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/payment-service/api/payments",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "payment-service",
+                "api",
+                "payments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/payment-service/api/payments/1",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "payment-service",
+                "api",
+                "payments",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cardNumber\": \"string\",\r\n  \"cardHolder\": \"string\",\r\n  \"cardExpirationYear\": 2023,\r\n  \"cardExpirationMonth\": 12,\r\n  \"cardCvv\": \"string\",\r\n  \"balance\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/payment-service/api/payments",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "payment-service",
+                "api",
+                "payments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cardNumber\": \"string\",\r\n  \"cardHolder\": \"string\",\r\n  \"cardExpirationYear\": 2023,\r\n  \"cardExpirationMonth\": 12,\r\n  \"cardCvv\": \"string\",\r\n  \"balance\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/payment-service/api/payments/1",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "payment-service",
+                "api",
+                "payments",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/payment-service/api/payments/7",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "payment-service",
+                "api",
+                "payments",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Invoice-service",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/invoice-service/api/invoices",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "invoice-service",
+                "api",
+                "invoices"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/invoice-service/api/invoices/1",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "invoice-service",
+                "api",
+                "invoices",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cardHolder\": \"string\",\r\n  \"modelName\": \"string\",\r\n  \"brandName\": \"string\",\r\n  \"plate\": \"string\",\r\n  \"modelYear\": 0,\r\n  \"dailyPrice\": 0,\r\n  \"rentedForDays\": 0,\r\n  \"rentedAt\": \"2023-04-15T23:05:02.919Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/invoice-service/api/invoices",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "invoice-service",
+                "api",
+                "invoices"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cardHolder\": \"string\",\r\n  \"modelName\": \"string\",\r\n  \"brandName\": \"string\",\r\n  \"plate\": \"string\",\r\n  \"modelYear\": 0,\r\n  \"dailyPrice\": 0,\r\n  \"rentedForDays\": 0,\r\n  \"rentedAt\": \"2023-04-15T23:06:06.070Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/invoice-service/api/invoices/1",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "invoice-service",
+                "api",
+                "invoices",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/invoice-service/api/invoices/754",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "invoice-service",
+                "api",
+                "invoices",
+                "754"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "customer-service",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ5eXZ2Q1BvbzBFYlgyTjNHYzI5cEFNNWc3MUp1UTFFSmdPTjdOSFh0RDI0In0.eyJleHAiOjE2ODM5MDMwNzEsImlhdCI6MTY4MzkwMTI3MSwianRpIjoiMjc0NTU1N2EtYTczNS00YmUwLWFmNTItYTc4OTAzMmFmODE3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL1JlbnRBQ2FyTWljcm9zZXJ2aWNlIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6Ijg0ZWU0Mjg1LWM0MmEtNDNiNS05ZTkyLWQzNjUyNTVlMTAwMSIsInR5cCI6IkJlYXJlciIsImF6cCI6InJlbnQtYS1jYXItbWljcm9zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6IjhhNmJhNzIzLTkzZjQtNDdmZS05NjkxLWNkZjlhMTk1MDU4MCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1yZW50YWNhcm1pY3Jvc2VydmljZSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiOGE2YmE3MjMtOTNmNC00N2ZlLTk2OTEtY2RmOWExOTUwNTgwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJCdXJhayBLQUxBWUNJIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYnVyYWsiLCJnaXZlbl9uYW1lIjoiQnVyYWsiLCJmYW1pbHlfbmFtZSI6IktBTEFZQ0kiLCJlbWFpbCI6ImJ1cmFrQGdtYWlsLmNvbSJ9.c34HAbO8bWO5iUEutz2JV-jJWJR5KOj9_zdzhVtVv17Mz9kh76V04hWYiYxSkdu2w90PZ5o_RWlVyg446dA3S4HZtHW94eEfP3HHPeKThOy-a9vHdVb6lRj3EV7pIYNwvXXizT8-rC3uvOPtexecspt-ES1WDq7wYPgYCdsPas2TpR0hEp5onZ3IFtRyQ_D8K3-pFJP_sV2CG8WeoQmn7uDrSKaHRZMSJpk2ee7Lf9RWsahLUYdxg5mzSLraNX8Phjr4pe8awCfxriGR_FMxt6dbPgRrmdsBNfpUxVgj5avFk3sf4OGpAXcmXWVamLY0JEGQixaK6ikDtQK_mkfmhA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/customer-service/api/customers",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "customer-service",
+                "api",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/customer-service/api/customers",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "customer-service",
+                "api",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cardHolder\": \"string\",\r\n  \"modelName\": \"string\",\r\n  \"brandName\": \"string\",\r\n  \"plate\": \"string\",\r\n  \"modelYear\": 0,\r\n  \"dailyPrice\": 0,\r\n  \"rentedForDays\": 0,\r\n  \"rentedAt\": \"2023-04-15T23:05:02.919Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/customer-service/api/customers",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "customer-service",
+                "api",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cardHolder\": \"string\",\r\n  \"modelName\": \"string\",\r\n  \"brandName\": \"string\",\r\n  \"plate\": \"string\",\r\n  \"modelYear\": 0,\r\n  \"dailyPrice\": 0,\r\n  \"rentedForDays\": 0,\r\n  \"rentedAt\": \"2023-04-15T23:06:06.070Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{localhost}}:9010/customer-service/api/customers",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "customer-service",
+                "api",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://{{localhost}}:9010/customer-service/api/customers",
+              "protocol": "http",
+              "host": [
+                "{{localhost}}"
+              ],
+              "port": "9010",
+              "path": [
+                "customer-service",
+                "api",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "192.168.1.101",
+      "type": "string"
+    },
+    {
+      "key": "localhost",
+      "value": "localhost",
+      "type": "string"
+    }
+  ]
+}
